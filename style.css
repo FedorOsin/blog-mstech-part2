@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+.video-text-block {
+  position: relative;
+  overflow: hidden;
+  padding: 5vw 2vw;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.text-wrapper {
+  position: relative;
+  z-index: 1;
+  font-size: 3vw;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.text-wrapper p {
+  margin: 1.5vw 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1vw;
+}
+
+.mask {
+  display: inline-block;
+  width: 14vw;
+  height: 2.8vw;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.mask::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200vw;
+  height: 200vh;
+  background: url("assets/video/background.mp4") no-repeat center center;
+  background-size: cover;
+  animation: none;
+  z-index: -1;
+}
+
+.mask.wide {
+  width: 25vw;
+}
+
+@media (max-width: 768px) {
+  .text-wrapper {
+    font-size: 5vw;
+  }
+
+  .mask {
+    width: 22vw;
+    height: 4vw;
+  }
+
+  .mask.wide {
+    width: 40vw;
+  }
+}
